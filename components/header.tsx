@@ -32,10 +32,10 @@ export function Header() {
       hasDropdown: true,
       items: [
         { name: "Lead Stabilisers", href: "/products/lead-stabilisers" },
-        { name: "Calcium Zinc Stabilisers", href: "/products/calcium-zinc-stabilisers" },
+        { name: "Calcium Zinc Additives", href: "/products/calcium-zinc-stabilisers" },
         { name: "Plasticisers", href: "/products/plasticisers" },
         { name: "Lubricants", href: "/products/lubricants" },
-        { name: "PVC Compounds", href: "/products" },
+        // { name: "PVC Compounds", href: "/products" },
         { name: "All Products", href: "/products" },
       ],
     },

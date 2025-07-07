@@ -28,7 +28,7 @@ export function Footer() {
               Leading manufacturer of PVC additives in India since 1984, specializing in Lead Stabilisers, Calcium Zinc
               Stabilisers, and Plasticisers for diverse industrial applications.
             </p>
-            <div className="flex space-x-3">
+            {/* <div className="flex space-x-3">
               {[Facebook, Twitter, Linkedin, Youtube].map((Icon, index) => (
                 <Button
                   key={index}
@@ -39,7 +39,7 @@ export function Footer() {
                   <Icon className="h-4 w-4" />
                 </Button>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
@@ -150,7 +150,7 @@ export function Footer() {
               </div>
             </div>
 
-            <div className="space-y-3">
+            {/* <div className="space-y-3">
               <h4 className="font-medium text-sm">Newsletter</h4>
               <p className="text-xs text-gray-300">Get the latest updates on products and industry news.</p>
               <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
@@ -163,7 +163,7 @@ export function Footer() {
                   Subscribe
                 </Button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 

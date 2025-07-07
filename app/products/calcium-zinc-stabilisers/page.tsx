@@ -55,11 +55,11 @@ export default function CalciumZincStabilisersPage() {
       <section className="relative bg-gradient-to-r from-green-900 to-green-700 text-white py-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <Badge className="bg-green-100 text-green-800 hover:bg-green-200 mb-6">
+            {/* <Badge className="bg-green-100 text-green-800 hover:bg-green-200 mb-6">
               <Leaf className="h-4 w-4 mr-2" />
               Eco-Friendly PVC Stabilizers
-            </Badge>
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Calcium Zinc Stabilisers</h1>
+            </Badge> */}
+            <h1 className="text-4xl lg:text-6xl font-bold mb-6">Calcium Zinc Additives</h1>
             <p className="text-xl text-green-100 leading-relaxed">
               Environmentally friendly, non-toxic stabilizers ideal for food-grade, medical, and high-performance PVC
               applications. Manufactured in Secunderabad, Telangana with the highest quality standards.

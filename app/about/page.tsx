@@ -172,34 +172,19 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "John Smith",
-                title: "Chief Executive Officer",
+                name: "B. Sri Krishna",
+                title: "CEO & Leader",
                 experience: "25+ years in chemical industry",
               },
               {
-                name: "Sarah Johnson",
-                title: "Chief Technology Officer",
+                name: "A. Kumar",
+                title: "Head Of Production",
                 experience: "20+ years in R&D leadership",
               },
               {
-                name: "Michael Chen",
-                title: "Chief Operating Officer",
+                name: "M. Singh",
+                title: "Cheif Technical Officer",
                 experience: "18+ years in operations",
-              },
-              {
-                name: "Emily Davis",
-                title: "Chief Financial Officer",
-                experience: "15+ years in finance",
-              },
-              {
-                name: "Robert Wilson",
-                title: "VP of Sales & Marketing",
-                experience: "22+ years in chemical sales",
-              },
-              {
-                name: "Lisa Brown",
-                title: "VP of Quality & Compliance",
-                experience: "16+ years in quality assurance",
               },
             ].map((leader) => (
               <Card
@@ -222,9 +207,9 @@ export default function AboutPage() {
                   <CardTitle className="text-xl">{leader.name}</CardTitle>
                   <CardDescription className="text-green-600 font-medium">{leader.title}</CardDescription>
                 </CardHeader>
-                <CardContent>
+                {/* <CardContent>
                   <p className="text-gray-600 text-sm">{leader.experience}</p>
-                </CardContent>
+                </CardContent> */}
               </Card>
             ))}
           </div>
@@ -275,7 +260,7 @@ export default function AboutPage() {
               Join thousands of companies worldwide who trust Uniroyal Chemicals for their specialty chemical needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
+              <Button size="lg" className="bg-white text-black hover:bg-green-600">
                 Contact Our Team
               </Button>
               <Button

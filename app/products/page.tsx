@@ -1,3 +1,6 @@
+
+"use client"
+
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -8,7 +11,22 @@ import Image from "next/image"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 
+
+
+import { useRouter } from 'next/navigation';
+
+
+
 export default function ProductsPage() {
+
+
+  const router = useRouter();
+
+  const handleNavigate = (change)=>{
+      router.push(change);
+  }
+
+
   const productCategories = [
     {
       name: "Lead Stabilisers",
@@ -16,13 +34,15 @@ export default function ProductsPage() {
       products: 150,
       featured: true,
       image: "/placeholder.svg?height=200&width=300&text=Lead+Stabilisers",
+      change:'/products/lead-stabilisers',
     },
     {
-      name: "Calcium Zinc Stabilisers",
+      name: "Calcium Zinc Additives",
       description: "Eco-friendly stabilizers for food-grade and medical applications",
       products: 45,
       featured: true,
       image: "/placeholder.svg?height=200&width=300&text=Calcium+Zinc+Stabilisers",
+      change:'/products/calcium-zinc-stabilisers',
     },
     {
       name: "Plasticisers",
@@ -30,6 +50,7 @@ export default function ProductsPage() {
       products: 32,
       featured: false,
       image: "/placeholder.svg?height=200&width=300&text=Plasticisers",
+      change:'/products/plasticisers',
     },
     {
       name: "Lubricants",
@@ -37,21 +58,23 @@ export default function ProductsPage() {
       products: 28,
       featured: false,
       image: "/placeholder.svg?height=200&width=300&text=Lubricants",
+      change:'/products/lubricants',
     },
-    {
-      name: "PVC Compounds",
-      description: "Ready-to-use compounds for specific applications",
-      products: 75,
-      featured: true,
-      image: "/placeholder.svg?height=200&width=300&text=PVC+Compounds",
-    },
-    {
-      name: "Custom Formulations",
-      description: "Tailored solutions for unique requirements",
-      products: 42,
-      featured: false,
-      image: "/placeholder.svg?height=200&width=300&text=Custom+Formulations",
-    },
+    // {
+    //   name: "PVC Compounds",
+    //   description: "Ready-to-use compounds for specific applications",
+    //   products: 75,
+    //   featured: true,
+    //   image: "/placeholder.svg?height=200&width=300&text=PVC+Compounds",
+    //   change:'/products/pvc-compounds',
+    // },
+    // {
+    //   name: "Custom Formulations",
+    //   description: "Tailored solutions for unique requirements",
+    //   products: 42,
+    //   featured: false,
+    //   image: "/placeholder.svg?height=200&width=300&text=Custom+Formulations",
+    // },
   ]
 
   const featuredProducts = [
@@ -106,7 +129,7 @@ export default function ProductsPage() {
                   className="pl-10 bg-white/10 border-white/20 text-white placeholder-white/60"
                 />
               </div>
-              <Button className="bg-orange-500 hover:bg-orange-600">
+              <Button className="bg-white text-black hover:bg-green-600">
                 <Filter className="h-4 w-4 mr-2" />
                 Filter
               </Button>
@@ -141,7 +164,7 @@ export default function ProductsPage() {
                   />
                   {category.featured && (
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-orange-500 hover:bg-orange-600">
+                      <Badge className="bg-green-500 ">
                         <Star className="h-3 w-3 mr-1" />
                         Featured
                       </Badge>
@@ -154,13 +177,14 @@ export default function ProductsPage() {
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="group-hover:text-blue-600 transition-colors">{category.name}</CardTitle>
+                  <CardTitle className="group-hover:text-green-600 transition-colors">{category.name}</CardTitle>
                   <CardDescription>{category.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Button
                     variant="outline"
-                    className="w-full group-hover:bg-blue-600 group-hover:text-white transition-colors bg-transparent"
+                    className="w-full group-hover:bg-green-600 group-hover:text-white transition-colors bg-transparent"
+                    onClick={()=>{ handleNavigate(category.change) }}
                   >
                     View Products
                     <ArrowRight className="ml-2 h-4 w-4" />
@@ -188,7 +212,7 @@ export default function ProductsPage() {
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className="space-y-2">
-                      <Badge variant="outline" className="text-blue-600 border-blue-600">
+                      <Badge variant="outline" className="text-green-600 border-green-600">
                         {product.category}
                       </Badge>
                       <CardTitle className="text-xl">{product.name}</CardTitle>
@@ -214,7 +238,7 @@ export default function ProductsPage() {
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700">
+                      <Button size="sm" className="flex-1 bg-green-600 hover:bg-green-700">
                         Request Sample
                       </Button>
                       <Button size="sm" variant="outline" className="flex-1 bg-transparent">
@@ -227,12 +251,13 @@ export default function ProductsPage() {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
+          {/* <div className="text-center mt-12">
+            <Button size="lg" className="bg-green-600 hover:bg-green-700">
               View All Featured Products
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </div>
+          </div> */}
+
         </div>
       </section>
 
@@ -334,7 +359,7 @@ export default function ProductsPage() {
               Our R&D team can develop custom formulations tailored to your specific requirements and applications.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-orange-500 hover:bg-orange-600">
+              <Button size="lg" className="bg-white text-black hover:text-green-600">
                 Request Custom Solution
               </Button>
               <Button
